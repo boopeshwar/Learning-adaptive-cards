@@ -1,6 +1,6 @@
-﻿# using adaptive cards
+﻿# Chat Bot Using adaptive cards
 
-#Intentionally reused for learning purposes only
+# Intentionally reused for learning and self training purposes only
 
 Bot Framework v4 using adaptive cards bot sample
 
