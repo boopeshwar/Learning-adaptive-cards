@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ADMIN\\Desktop\\ExcelFile\\BotBuilder-Samples-master\\BotBuilder-Samples-master\\samples\\csharp_dotnetcore\\07.using-adaptive-cards\\AdaptiveCardsBot.csproj": {}
+    "C:\\Users\\ADMIN\\Desktop\\Learning-adaptive-cards\\AdaptiveCardsBot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ADMIN\\Desktop\\ExcelFile\\BotBuilder-Samples-master\\BotBuilder-Samples-master\\samples\\csharp_dotnetcore\\07.using-adaptive-cards\\AdaptiveCardsBot.csproj": {
+    "C:\\Users\\ADMIN\\Desktop\\Learning-adaptive-cards\\AdaptiveCardsBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\ExcelFile\\BotBuilder-Samples-master\\BotBuilder-Samples-master\\samples\\csharp_dotnetcore\\07.using-adaptive-cards\\AdaptiveCardsBot.csproj",
+        "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\Learning-adaptive-cards\\AdaptiveCardsBot.csproj",
         "projectName": "AdaptiveCardsBot",
-        "projectPath": "C:\\Users\\ADMIN\\Desktop\\ExcelFile\\BotBuilder-Samples-master\\BotBuilder-Samples-master\\samples\\csharp_dotnetcore\\07.using-adaptive-cards\\AdaptiveCardsBot.csproj",
+        "projectPath": "C:\\Users\\ADMIN\\Desktop\\Learning-adaptive-cards\\AdaptiveCardsBot.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ADMIN\\Desktop\\ExcelFile\\BotBuilder-Samples-master\\BotBuilder-Samples-master\\samples\\csharp_dotnetcore\\07.using-adaptive-cards\\obj\\",
+        "outputPath": "C:\\Users\\ADMIN\\Desktop\\Learning-adaptive-cards\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

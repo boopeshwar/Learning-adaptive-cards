@@ -1,5 +1,5 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
-// Licensed under the MIT License.
+// Intented to use for Learning & Demo purposes only
 
 using System;
 using System.Collections.Generic;
@@ -34,6 +34,10 @@ namespace Microsoft.BotBuilderSamples
             Path.Combine(".", "Resources", "FlightItineraryCard.json"),
             Path.Combine(".", "Resources", "ImageGalleryCard.json"),
             Path.Combine(".", "Resources", "LargeWeatherCard.json"),
+            Path.Combine(".", "Resources", "FlightUpdate.json"),
+            Path.Combine(".", "Resources", "AdaptiveCardDemo.json"),
+            Path.Combine(".", "Resources", "FoodOrder.json"),
+            Path.Combine(".", "Resources", "InputForm.json"),
             Path.Combine(".", "Resources", "RestaurantCard.json"),
             Path.Combine(".", "Resources", "SolitaireCard.json"),
             Path.Combine(".", "Resources", "InputChoiceCard.json"),
@@ -46,11 +50,41 @@ namespace Microsoft.BotBuilderSamples
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
             Random r = new Random();
+            var activity = turnContext.Activity;
             var cardAttachment = CreateAdaptiveCardAttachment(_cards[r.Next(_cards.Length)]);
 
-            //turnContext.Activity.Attachments = new List<Attachment>() { cardAttachment };
-            await turnContext.SendActivityAsync(MessageFactory.Attachment(cardAttachment), cancellationToken);
-            await turnContext.SendActivityAsync(MessageFactory.Text("Please enter any text to see another card."), cancellationToken);
+            if(activity.Text.Contains("weather", StringComparison.InvariantCultureIgnoreCase))
+            {
+                await turnContext.SendActivityAsync(MessageFactory.Attachment(CreateAdaptiveCardAttachment(_cards[2])));
+                await turnContext.SendActivityAsync(MessageFactory.Text("Please enter any text to see another card."), cancellationToken);
+            }
+            else if(activity.Text.Contains("flight", StringComparison.InvariantCultureIgnoreCase))
+            {
+                await turnContext.SendActivityAsync(MessageFactory.Attachment(CreateAdaptiveCardAttachment(_cards[3])));
+                await turnContext.SendActivityAsync(MessageFactory.Text("Please enter any text to see another card."), cancellationToken);
+            }
+            else if(activity.Text.Contains("demo", StringComparison.InvariantCultureIgnoreCase))
+            {
+                await turnContext.SendActivityAsync(MessageFactory.Attachment(CreateAdaptiveCardAttachment(_cards[4])));
+                await turnContext.SendActivityAsync(MessageFactory.Text("Please enter any text to see another card."), cancellationToken);
+            }
+            else if(activity.Text.Contains("Form", StringComparison.InvariantCultureIgnoreCase))
+            {
+                await turnContext.SendActivityAsync(MessageFactory.Attachment(CreateAdaptiveCardAttachment(_cards[6])));
+                await turnContext.SendActivityAsync(MessageFactory.Text("Please enter any text to see another card."), cancellationToken);
+            }
+            else if(activity.Text.Contains("Food", StringComparison.InvariantCultureIgnoreCase))
+            {
+                await turnContext.SendActivityAsync(MessageFactory.Attachment(CreateAdaptiveCardAttachment(_cards[5])));
+                await turnContext.SendActivityAsync(MessageFactory.Text("Please enter any text to see another card."), cancellationToken);
+            }
+            else
+            {
+                //turnContext.Activity.Attachments = new List<Attachment>() { cardAttachment };
+                await turnContext.SendActivityAsync(MessageFactory.Text("Displaying a random card"), cancellationToken);
+                await turnContext.SendActivityAsync(MessageFactory.Attachment(cardAttachment), cancellationToken);
+                await turnContext.SendActivityAsync(MessageFactory.Text("Please enter any text to see another card."), cancellationToken);
+            }
         }
 
         private static async Task SendWelcomeMessageAsync(ITurnContext turnContext, CancellationToken cancellationToken)
@@ -78,9 +112,3 @@ namespace Microsoft.BotBuilderSamples
         }
     }
 }
-
-
-
-
-
-
